@@ -18,7 +18,7 @@ ORDER BY process_adherence DESC;
   -- A subquery is used here to first calculate the average process adherence from last month
 SELECT team, exp_id, process_adherence
 FROM experiments
-WHERE process_adherence < (SELECT AVE(process_adherece)
+WHERE process_adherence < (SELECT AVG(process_adherece)
 	FROM experiments 
 	WHERE start_date BETWEEN '2021-10-01' AND '2021-10-31')
 AND start_date > '2021-11-01'
